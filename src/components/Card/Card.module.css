@@ -1,0 +1,107 @@
+/* Background colors for the card */
+.color1 {
+  background-color: blue;
+}
+
+.color2 {
+  background-color: green;
+}
+
+.color3 {
+  background-color: red;
+}
+
+.color4 {
+  background-color: yellow;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 300px;
+  text-align: left;
+}
+
+button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.cardContent {
+  min-height: 150px; /* Minimum height for each card */
+  max-width: 30%; /* Maximum width for each card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  padding: 10px; /* Inside space */
+  margin: 0; /* Ensure no margin is added */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Adds "..." for overflowed text */
+  white-space: nowrap; /* Prevent text wrapping (if desired) */
+}
+
+/* Button Style */
+.toggleButton {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.colorOptions {
+  display: flex;
+  justify-content: center;
+}
+
+.toggleButton:hover {
+  background-color: #f0f0f0;
+}
+
+/* Color Picker Styles */
+.colorPicker {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.colorCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.colorCircle:hover {
+  transform: scale(1.2);
+}
+.editableText {
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  width: calc(100% - 20px);
+  padding: 0;
+  outline: none;
+  cursor: text;
+}
+
+.card button {
+  margin: 10px;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}

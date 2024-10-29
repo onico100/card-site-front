@@ -1,0 +1,21 @@
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  justify-content: start;
+}
+
+.addButton {
+  position: relative;
+  top: 5px;
+  right: 5px;
+  padding: 5px 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
