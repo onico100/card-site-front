@@ -73,7 +73,9 @@ const Card = ({ onDelete }) => {
           ))}
         </div>
       )}
-      <button onClick={onDelete}>🗑️</button>
+      <button onClick={onDelete} className={Styles.delete}>
+        🗑️
+      </button>
     </div>
   );
 };

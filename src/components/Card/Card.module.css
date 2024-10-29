@@ -1,32 +1,32 @@
 /* Background colors for the card */
 .color1 {
-  background-color: blue;
+  background-color: aqua;
 }
 
 .color2 {
-  background-color: green;
+  background-color: pink;
 }
 
 .color3 {
-  background-color: red;
+  background-color: rgb(124, 232, 173);
 }
 
 .color4 {
-  background-color: yellow;
+  background-color: rgb(229, 229, 155);
 }
 
 .card {
   padding: 20px;
   border-radius: 10px;
   margin: 20px auto;
-  width: 300px;
   text-align: left;
-}
-
-button {
-  position: absolute;
-  top: 5px;
-  right: 5px;
+  min-height: 150px; /* Minimum height for each card */
+  max-width: 32%; /* Maximum width for each card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  padding: 10px; /* Inside space */
+  overflow: hidden; /* Prevent text overflow */
+  text-overflow: ellipsis; /* Adds "..." for overflowed text */
+  white-space: nowrap; /* Prevent text wrapping (if desired) */
 }
 
 .cardContent {
@@ -91,17 +91,11 @@ button {
   cursor: text;
 }
 
-.card button {
-  margin: 10px;
-  color: #000;
-  background-color: #fff;
+.delete {
+  position: relative;
+  background-color: transparent;
   border: none;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
-  font-weight: bold;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  position: relative;
 }
