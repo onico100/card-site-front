@@ -21,6 +21,8 @@ const CardContainer = () => {
   }, []);
 
   const addCard = async () => {
+    //clear serch
+    setSearchTerm("");
     try {
       const newCard = {
         text: "enter text...",
