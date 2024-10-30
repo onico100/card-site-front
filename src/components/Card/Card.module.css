@@ -119,10 +119,9 @@
 }
 
 .textContainer {
-  max-height: calc(100% - 50px); /* Adjust based on card's padding */
-  overflow-y: auto; /* Only show scrollbar when needed */
+  max-height: 200px; /* Set a height limit */
+  overflow-y: auto; /* Enable vertical scroll */
   padding: 5px;
   text-align: center;
   width: 100%;
-  box-sizing: border-box; /* Ensures padding doesn’t add extra height */
 }
