@@ -74,7 +74,7 @@ const Card = ({
         />
       ) : (
         <div onClick={handleTextClick} className={Styles.text}>
-          <p>{text}</p>
+          <p className={Styles.textContainer}>{text}</p>
         </div>
       )}
       <button onClick={toggleColorPicker} className={Styles.toggleButton}>

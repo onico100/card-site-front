@@ -14,6 +14,7 @@
   word-break: break-word;
   background-color: gray;
   color: #fff;
+  position: relative;
 }
 
 .color1 {
@@ -62,6 +63,10 @@
 }
 
 .toggleButton {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
   border: none;
   background: none;
   cursor: pointer;
@@ -111,4 +116,13 @@
   right: 5px;
   cursor: pointer;
   color: #fff;
+}
+
+.textContainer {
+  max-height: calc(100% - 50px); /* Adjust based on card's padding */
+  overflow-y: auto; /* Only show scrollbar when needed */
+  padding: 5px;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box; /* Ensures padding doesn’t add extra height */
 }
