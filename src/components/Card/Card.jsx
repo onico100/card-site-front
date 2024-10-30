@@ -2,7 +2,17 @@ import React, { useState, useEffect } from "react";
 import Styles from "./Card.module.css";
 import { FaTrashAlt } from "react-icons/fa";
 
-const colors = ["color1", "color2", "color3", "color4"];
+const colors = [
+  "color1",
+  "color2",
+  "color3",
+  "color4",
+  "color5",
+  "color6",
+  "color7",
+  "color8",
+  "color9",
+];
 
 const Card = ({
   id, // Pass ID from CardContainer

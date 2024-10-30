@@ -22,8 +22,7 @@ const CardContainer = () => {
   const addCard = async () => {
     try {
       const newCard = {
-        text: `Text ${String.fromCharCode(97 + cards.length)}`,
-        backgraund: "color1",
+        text: "enter text...",
       };
       const createdCard = await createCard(newCard.text, newCard.backgraund);
       setCards([...cards, createdCard]);
