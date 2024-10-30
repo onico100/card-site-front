@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div>
-        <h1>My Card Grid</h1>
+        <h1>My Card Site</h1>
         <CardContainer />
       </div>
     </div>

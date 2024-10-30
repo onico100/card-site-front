@@ -18,47 +18,38 @@
 
 .color1 {
   background-color: aqua;
-  color: #fff;
 }
 
 .color2 {
   background-color: pink;
-  color: #fff;
 }
 
 .color3 {
   background-color: rgb(124, 232, 173);
-  color: #fff;
 }
 
 .color4 {
   background-color: rgb(229, 229, 155);
-  color: #fff;
 }
 
 .color5 {
   background-color: rgb(124, 173, 232);
-  color: #fff;
 }
 
 .color6 {
   background-color: rgb(232, 124, 173);
-  color: #fff;
 }
 
 .color7 {
   background-color: rgb(173, 124, 232);
-  color: #fff;
 }
 
 .color8 {
   background-color: rgb(232, 173, 124);
-  color: #fff;
 }
 
 .color9 {
   background-color: rgb(173, 232, 124);
-  color: #fff;
 }
 
 .card:hover {

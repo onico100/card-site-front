@@ -15,7 +15,7 @@ const colors = [
 ];
 
 const Card = ({
-  id, // Pass ID from CardContainer
+  id,
   text: initialText,
   backgraund: initialColor,
   onDelete,
@@ -27,7 +27,6 @@ const Card = ({
   const [inputValue, setInputValue] = useState(initialText);
   const [isPickerVisible, setPickerVisible] = useState(false);
 
-  // Update local state when initial props change (if updated by parent component)
   useEffect(() => {
     setText(initialText);
     setColor(initialColor);
