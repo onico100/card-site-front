@@ -1,20 +1,28 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Styles from "./Card.module.css";
 import { FaTrashAlt } from "react-icons/fa";
 
 const colors = ["color1", "color2", "color3", "color4"];
 
 const Card = ({
+  id, // Pass ID from CardContainer
   text: initialText,
-  color: initialColor,
+  backgraund: initialColor,
   onDelete,
   onUpdate,
 }) => {
-  const [color, setColor] = useState(initialColor);
+  const [backgraund, setColor] = useState(initialColor);
   const [text, setText] = useState(initialText);
   const [isEditing, setEditing] = useState(false);
   const [inputValue, setInputValue] = useState(initialText);
   const [isPickerVisible, setPickerVisible] = useState(false);
+
+  // Update local state when initial props change (if updated by parent component)
+  useEffect(() => {
+    setText(initialText);
+    setColor(initialColor);
+    setInputValue(initialText);
+  }, [initialText, initialColor]);
 
   const handleTextClick = () => setEditing(true);
 
@@ -23,21 +31,22 @@ const Card = ({
   };
 
   const handleInputBlur = () => {
+    const updatedData = { text: inputValue, backgraund };
     setText(inputValue);
-    onUpdate({ text: inputValue, color });
+    onUpdate(id, updatedData); // Pass ID and updated data to onUpdate
     setEditing(false);
   };
 
   const handleColorChange = (selectedColor) => {
     setColor(selectedColor);
-    onUpdate({ text, color: selectedColor });
+    onUpdate(id, { text, backgraund: selectedColor });
     setPickerVisible(false);
   };
 
   const toggleColorPicker = () => setPickerVisible((prev) => !prev);
 
   return (
-    <div className={`${Styles.card} ${Styles[color]}`}>
+    <div className={`${Styles.card} ${Styles[backgraund]}`}>
       {isEditing ? (
         <input
           type="text"
@@ -58,16 +67,17 @@ const Card = ({
       {isPickerVisible && (
         <div className={Styles.colorOptions}>
           {colors.map((colorOption) => (
-            <div
+            <button
               key={colorOption}
               className={`${Styles.colorCircle} ${Styles[colorOption]}`}
               onClick={() => handleColorChange(colorOption)}
-              title={colorOption.replace("color", "Color ")}
-            ></div>
+              title={`Select ${colorOption.replace("color", "Color ")}`}
+              aria-label={`Select ${colorOption.replace("color", "Color ")}`}
+            ></button>
           ))}
         </div>
       )}
-      <button onClick={onDelete} className={Styles.delete}>
+      <button onClick={onDelete} className={Styles.delete} aria-label="Delete">
         <FaTrashAlt />
       </button>
     </div>
