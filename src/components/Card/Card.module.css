@@ -120,8 +120,12 @@
 
 .textContainer {
   max-height: 200px; /* Set a height limit */
-  overflow-y: auto; /* Enable vertical scroll */
+  overflow-y: hidden; /* Enable vertical scroll */
   padding: 5px;
   text-align: center;
   width: 100%;
+}
+
+.textContainer:hover {
+  overflow-y: auto; /* Show scrollbar when hovering */
 }
