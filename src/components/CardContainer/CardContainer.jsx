@@ -5,6 +5,7 @@ import { getAllCards, createCard, updateCard, deleteCard } from "../../service";
 
 const CardContainer = () => {
   const [cards, setCards] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -47,10 +48,20 @@ const CardContainer = () => {
       console.error("Error deleting card:", error);
     }
   };
+  const filteredCards = cards.filter((card) =>
+    card.text.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
     <div className={styles.cardContainer}>
-      {cards.map((card) => (
+      <input
+        type="text"
+        placeholder="Search cards..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+        className={styles.searchBar}
+      />
+      {filteredCards.map((card) => (
         <Card
           key={card.id}
           id={card.id}
