@@ -52,6 +52,12 @@ const Card = ({
     setPickerVisible(false);
   };
 
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      handleInputBlur();
+    }
+  };
+
   const toggleColorPicker = () => setPickerVisible((prev) => !prev);
 
   return (
@@ -64,6 +70,7 @@ const Card = ({
           onChange={handleInputChange}
           onBlur={handleInputBlur}
           autoFocus
+          onKeyDown={handleKeyDown}
         />
       ) : (
         <div onClick={handleTextClick} className={Styles.text}>
