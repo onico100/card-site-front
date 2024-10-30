@@ -24,10 +24,18 @@ const CardContainer = () => {
       const newCard = {
         text: "enter text...",
       };
-      const createdCard = await createCard(newCard.text, newCard.backgraund);
+      const createdCard = await createCard(newCard.text);
       setCards([...cards, createdCard]);
     } catch (error) {
       console.error("Error adding card:", error);
+    }
+  };
+  const handleUpdateCard = async (id, updatedCard) => {
+    try {
+      const updatedData = await updateCard(id, updatedCard);
+      setCards(cards.map((card) => (card.id === id ? updatedData : card)));
+    } catch (error) {
+      console.error("Error updating card:", error);
     }
   };
 
@@ -40,15 +48,6 @@ const CardContainer = () => {
     }
   };
 
-  const handleUpdateCard = async (id, updatedCard) => {
-    try {
-      const updatedData = await updateCard(id, updatedCard);
-      setCards(cards.map((card) => (card.id === id ? updatedData : card)));
-    } catch (error) {
-      console.error("Error updating card:", error);
-    }
-  };
-
   return (
     <div className={styles.cardContainer}>
       {cards.map((card) => (
@@ -58,7 +57,7 @@ const CardContainer = () => {
           text={card.text}
           backgraund={card.backgraund}
           onDelete={() => handleDeleteCard(card.id)}
-          onUpdate={handleUpdateCard} // Pass handleUpdateCard function directly
+          onUpdate={handleUpdateCard}
         />
       ))}
       <button className={styles.addButton} onClick={addCard}>
