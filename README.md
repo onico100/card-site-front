@@ -7,7 +7,7 @@ This project is a React application that connects to a Node.js server, providing
 1. **Clone the repository:**
 
 ```bash
-   git clone <https://github.com/onico100/card-site-server>
+   git clone <https://github.com/onico100/card-site-front>
 ```
 
 2. **Install dependencys:**
@@ -21,11 +21,19 @@ This project is a React application that connects to a Node.js server, providing
    Run the Server:
 
    - Clone and set up the server from the repository here.
+
+   ```bash
+    git clone <https://github.com/onico100/card-site-server>
+   ```
+
    - Follow the server's setup instructions.
    - Start the server on the desired port.
 
 4. **Run the Client Application:**
+
+```bash
    npm start
+```
 
 ## Features
 
