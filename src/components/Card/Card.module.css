@@ -129,3 +129,33 @@
 .textContainer:hover {
   overflow-y: auto; /* Show scrollbar when hovering */
 }
+
+.pinButton {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: gray; /* Default color for unpinned */
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+  margin-right: 8px;
+}
+
+.pinButton:hover {
+  color: black; /* Hover color */
+}
+
+.unPinButton {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: black; /* Color when pinned */
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: color 0.3s ease;
+  margin-right: 8px;
+}
