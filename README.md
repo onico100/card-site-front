@@ -29,6 +29,18 @@ This project is a React application that connects to a Node.js server, providing
 - Pin/Unpin Cards: Pin cards to the top of the list for easy access. Pinned cards are saved in localStorage.
 - Search: Filter cards by their content.
 
+## Folder Structure
+
+card-front/
+├── public/ #static files
+│ ├── images/ #screenshots
+├── src/
+│ ├── components/ # React components like Card and CardContainer
+│ ├── services/ # API functions in service.js
+│ ├── App.js # Main app component
+│ └── index.js # Entry point
+└── package.json # Project metadata and dependencies
+
 ## Technologies Used
 
 - **React**: For building the user interface.
@@ -49,28 +61,20 @@ The service.js file contains functions to interact with the Node.js server API u
 
 ### Home Screen
 
-![deafult Screen](images/screen1.png)
+![deafult Screen](public/images/screen1.png)
 
 ### add card
 
-![add card](images/addCard.png)
+![add card](public/images/addCard.png)
 
 ### search filter screen
 
-![search filter](images/search.png)
+![search filter](public/images/search.png)
 
 ## choose color screen
 
-![choose color screen](images/color.png)
+![choose color screen](public/images/color.png)
 
-## App Screenshots
-
-<p float="left">
-  <img src="images/screen1.png" width="300" />
-  <img src="images/addCard.png" width="300" /> 
-  <img src="images/search.png" width="300" />
-  <img src="images/color" width="300">
-</p>
 ## Troubleshooting
 
 - Server Connection Issues: Ensure the server is running on the correct port.
