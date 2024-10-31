@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Styles from "./Card.module.css";
 import { FaTrashAlt } from "react-icons/fa";
+import { RiPushpinLine, RiPushpin2Fill } from "react-icons/ri";
 
 const colors = [
   "color1",
@@ -20,6 +21,8 @@ const Card = ({
   backgraund: initialColor,
   onDelete,
   onUpdate,
+  onPin,
+  isPinned,
 }) => {
   const [backgraund, setColor] = useState(initialColor);
   const [text, setText] = useState(initialText);
@@ -58,6 +61,10 @@ const Card = ({
     }
   };
 
+  const handlePinClick = () => {
+    onPin(id);
+  };
+
   const toggleColorPicker = () => setPickerVisible((prev) => !prev);
 
   return (
@@ -92,6 +99,25 @@ const Card = ({
             ></button>
           ))}
         </div>
+      )}
+      {!isPinned && (
+        <button
+          onClick={handlePinClick}
+          className={Styles.pinButton}
+          aria-label="Pin"
+        >
+          <RiPushpinLine />
+        </button>
+      )}
+
+      {isPinned && (
+        <button
+          onClick={handlePinClick}
+          className={Styles.unPinButton}
+          aria-label="Pin"
+        >
+          <RiPushpin2Fill />
+        </button>
       )}
       <button onClick={onDelete} className={Styles.delete} aria-label="Delete">
         <FaTrashAlt />
