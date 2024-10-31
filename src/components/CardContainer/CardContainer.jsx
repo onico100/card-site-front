@@ -6,7 +6,7 @@ import { getAllCards, createCard, updateCard, deleteCard } from "../../service";
 
 const CardContainer = () => {
   const [cards, setCards] = useState([]);
-  const [pinnedCards, setPinnedCards] = useState([]); // Array for pinned card IDs
+  const [pinnedCards, setPinnedCards] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
@@ -18,7 +18,19 @@ const CardContainer = () => {
         console.error("Error loading cards:", error);
       }
     };
+
+    // Load pinned cards from localStorage on component mount
+    const loadPinnedCards = () => {
+      const storedPinned = JSON.parse(localStorage.getItem("pinnedCards"));
+      console.log("lodd" + storedPinned);
+      if (storedPinned) {
+        setPinnedCards(storedPinned);
+        console.log("lodd" + storedPinned);
+      }
+    };
+
     fetchCards();
+    loadPinnedCards();
   }, []);
 
   const addCard = async () => {
@@ -53,8 +65,14 @@ const CardContainer = () => {
 
   const handlePinCard = (id) => {
     setPinnedCards((prev) => {
-      if (prev.includes(id)) return prev.filter((pinnedId) => pinnedId !== id);
-      return [id, ...prev]; // Add the pinned card ID to the beginning of the array
+      let updatedPinnedCards;
+      if (prev.includes(id)) {
+        updatedPinnedCards = prev.filter((pinnedId) => pinnedId !== id);
+      } else {
+        updatedPinnedCards = [id, ...prev];
+      }
+      localStorage.setItem("pinnedCards", JSON.stringify(updatedPinnedCards));
+      return updatedPinnedCards;
     });
   };
 
