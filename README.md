@@ -1,70 +1,77 @@
-# Getting Started with Create React App
+# Card Application front
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React application that connects to a Node.js server, providing a user-friendly interface for managing cards. Users can create, update, delete, and pin cards. Pinned cards are stored in localStorage for persistence.
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+1. **Clone the repository:**
+   git clone <https://github.com/onico100/card-site-server>
 
-### `npm start`
+2. **Install dependencys:**
+   cd <card-client>
+   npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+3. **Usage:**
+   Run the Server:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+   - Clone and set up the server from the repository here.
+   - Follow the server's setup instructions.
+   - Start the server on the desired port.
 
-### `npm test`
+4. **Run the Client Application:**
+   npm start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Features
 
-### `npm run build`
+- Create Cards: Add new cards with default text and no background color.
+- Update Cards: Edit the card content and select from nine background colors .
+- Delete Cards: Remove cards from the list.
+- Pin/Unpin Cards: Pin cards to the top of the list for easy access. Pinned cards are saved in localStorage.
+- Search: Filter cards by their content.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies Used
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **React**: For building the user interface.
+- **React Icons:** For using icons in the application.
+- **Axios (or Fetch API):** For making HTTP requests to the backend server.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## API Service
 
-### `npm run eject`
+The service.js file contains functions to interact with the Node.js server API using Axios. Here are the main functions:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- getAllCards: Fetches all cards from the server.
+- getCardById: Fetches a single card by its ID.
+- createCard: Creates a new card with specified text and background color.
+- updateCard: Updates an existing card by its ID with new data.
+- deleteCard: Deletes a card by its ID.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## App Screenshots
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Home Screen
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![deafult Screen](images/screen1.png)
 
-## Learn More
+### add card
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![add card](images/addCard.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### search filter screen
 
-### Code Splitting
+![search filter](images/search.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## choose color screen
 
-### Analyzing the Bundle Size
+![choose color screen](images/color.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## App Screenshots
 
-### Making a Progressive Web App
+<p float="left">
+  <img src="images/screen1.png" width="300" />
+  <img src="images/addCard.png" width="300" /> 
+  <img src="images/search.png" width="300" />
+  <img src="images/color" width="300">
+</p>
+## Troubleshooting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Server Connection Issues: Ensure the server is running on the correct port.
+- LocalStorage Issues: If pinned cards aren’t persisting, check your browser’s localStorage settings.
