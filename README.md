@@ -5,11 +5,17 @@ This project is a React application that connects to a Node.js server, providing
 ## Installation
 
 1. **Clone the repository:**
+
+```bash
    git clone <https://github.com/onico100/card-site-server>
+```
 
 2. **Install dependencys:**
+
+```bash
    cd <card-client>
    npm install
+```
 
 3. **Usage:**
    Run the Server:
