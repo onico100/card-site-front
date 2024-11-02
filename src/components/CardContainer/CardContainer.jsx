@@ -34,7 +34,7 @@ const CardContainer = () => {
   }, []);
 
   const addCard = async () => {
-    setSearchTerm("");
+    clearSerch();
     try {
       const newCard = { text: "enter text..." };
       const createdCard = await createCard(newCard.text);
@@ -85,8 +85,12 @@ const CardContainer = () => {
     (card) => !pinnedCards.includes(card.id)
   );
 
+  const clearSerch = () => {
+    setSearchTerm("");
+  };
+
   return (
-    <div className={styles.cardContainer}>
+    <div onClick={clearSerch} className={styles.cardContainer}>
       <input
         type="text"
         placeholder="Search cards..."
